@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FactMesh</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%232563eb'/%3E%3Cstop offset='55%25' stop-color='%2306b6d4'/%3E%3Cstop offset='100%25' stop-color='%2314b8a6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='url(%23g)'/%3E%3Cg fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' transform='translate(1.2,1.2) scale(0.9)'%3E%3Cpath d='m10.586 5.414l-5.172 5.172m13.172 2.828l-5.172 5.172M6 12h12'/%3E%3Ccircle cx='12' cy='20' r='2'/%3E%3Ccircle cx='12' cy='4' r='2'/%3E%3Ccircle cx='20' cy='12' r='2'/%3E%3Ccircle cx='4' cy='12' r='2'/%3E%3C/g%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2/dist/iconify-icon.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          },
+          boxShadow: {
+            soft: '0 1px 2px rgba(24,24,50,0.04), 0 8px 24px rgba(24,24,50,0.06)',
+            softer: '0 1px 3px rgba(24,24,50,0.06)',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.25s ease-out',
+            'toast-in': 'toastIn 0.2s ease-out',
+            'pulse-soft': 'pulseSoft 1.6s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: { from: { opacity: 0, transform: 'translateY(4px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+            toastIn: { from: { opacity: 0, transform: 'translateY(10px) scale(0.97)' }, to: { opacity: 1, transform: 'translateY(0) scale(1)' } },
+            pulseSoft: { '0%,100%': { opacity: 1 }, '50%': { opacity: 0.4 } },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif; }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #d6d3f5; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: #b8b3ec; }
+  </style>
+</head>
+<body class="bg-[#f7f7fc] text-slate-900 antialiased">
+  <div id="root"></div>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>

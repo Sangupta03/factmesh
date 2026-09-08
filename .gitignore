@@ -1,0 +1,25 @@
+# secrets
+backend/.env
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# runtime data is generated, not source - EXCEPT factmesh.seed.db, which is a
+# tracked snapshot of the knowledge base after processing all 6 starter PDFs,
+# shipped so a reviewer sees real results immediately without spending their
+# own Gemini quota just to look (see README).
+backend/data/*
+!backend/data/factmesh.seed.db
+backend/uploads/
+
+# demo-only PDFs dropped straight in backend/ for local testing
+
+backend/*.pdf
+
+# editor/OS cruft
+.DS_Store
+.vscode/
+*.log
